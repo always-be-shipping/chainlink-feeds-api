@@ -38,3 +38,29 @@ export async function getFeedsForChain(chain: string): Promise<Feed[]> {
   }
   return await res.json();
 }
+
+export async function getFeedForBase(
+  chain: string,
+  base: string,
+): Promise<Feed[]> {
+  const _feeds = await getFeedsForChain(chain);
+  const feeds = _feeds.filter((feed) =>
+    feed.path.toLowerCase().startsWith(`${base.toLowerCase()}`),
+  );
+  return feeds;
+}
+
+export async function getFeedForBaseQuote(
+  chain: string,
+  base: string,
+  quote: string,
+): Promise<Feed | null> {
+  const feeds = await getFeedsForChain(chain);
+  // base-quote is in the `path` field, lowercase
+  const feed = feeds.find(
+    (feed) =>
+      feed.path.toLowerCase() ===
+      `${base.toLowerCase()}-${quote.toLowerCase()}`,
+  );
+  return feed || null;
+}
