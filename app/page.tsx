@@ -9,12 +9,24 @@ export default function Home() {
         Lookup Chainlink feeds by chain at <code>/api/feeds/[chain]</code>
       </p>
       <p>Examples:</p>
-      <ul>
+      <ul className="mb-4">
         <li>
           <Link href="/api/feeds/ethereum">Ethereum Feeds</Link>
         </li>
         <li>
           <Link href="/api/feeds/polygon">Polygon Feeds</Link>
+        </li>
+      </ul>
+      <p className="mb-4">
+        Use query parameters <code>?base=BASE&quote=QUOTE</code> to filter feeds
+        by base and quote assets.
+      </p>
+      <p>Example:</p>
+      <ul>
+        <li>
+          <Link href="/api/feeds/ethereum?base=eth&quote=usd">
+            ETH/USD Feed on Ethereum
+          </Link>
         </li>
       </ul>
     </div>
