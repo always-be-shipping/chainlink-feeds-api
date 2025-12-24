@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+a {
+  @apply text-blue-600 hover:text-blue-400 visited:text-blue-900 underline;
+}
