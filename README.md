@@ -57,7 +57,7 @@ GET /api/feeds/[chain]?base=[asset]&quote=[asset]
 
 **Example:**
 ```bash
-curl https://chainlink-feeds.alwaysbeshipp. ing/api/feeds/ethereum? base=eth&quote=usd
+curl https://chainlink-feeds.alwaysbeshipp.ing/api/feeds/ethereum?base=eth&quote=usd
 ```
 
 ### Supported Chains
